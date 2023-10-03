@@ -15,7 +15,7 @@ const schema = yup.object({
 })
 
 const Form = () => {
-    const { register, handleSubmit, control, formState } = useForm({
+    const { register, handleSubmit, formState } = useForm({
         mode: 'onBlur',
         resolver: yupResolver(schema),
 
@@ -23,7 +23,6 @@ const Form = () => {
             const response = await fetch("https://jsonplaceholder.typicode.com/users/1")
             const data = await response.json()
             return {
-
                 name: data.name,
                 age: 30,
                 country: "DZ",
